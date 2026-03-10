@@ -1,20 +1,22 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
-  --color-brand: #FF0050; /* TikTok-ish pink */
-  --color-accent: #00F2EA; /* TikTok-ish cyan */
+:root {
+  --brand: #FF0050;
+  --accent: #00F2EA;
 }
 
-@layer base {
-  body {
-    @apply bg-white dark:bg-zinc-900 text-black dark:text-white font-sans antialiased;
-  }
+body {
+  margin: 0;
+  background-color: white;
+  font-family: 'Inter', sans-serif;
 }
 
 .glass {
-  @apply bg-white/80 backdrop-blur-md border border-white/20;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .no-scrollbar::-webkit-scrollbar {
